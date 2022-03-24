@@ -1,0 +1,27 @@
+header h1{
+    color: rgb(100, 100, 50
+    );
+}
+header hr {
+    border: none;
+    border-top: 10px dotted rgb(81, 177, 81);
+    width: 100%;
+}
+
+dev h2{
+    color: rgb(85, 79, 79);
+}
+ul{
+    border: solid 5px rgb(100, 30, 30);
+    width: 500px;
+    height: 100px;
+    padding: 40px 100px 5px 30px;
+    background-color: rgb(204, 204, 198);
+}
+
+a:hover{
+    color: chocolate;
+}
+.italic{
+    font-style: italic;
+}
