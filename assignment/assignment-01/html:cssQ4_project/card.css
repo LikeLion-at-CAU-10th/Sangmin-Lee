@@ -1,0 +1,36 @@
+.out_box{
+    border: 2px solid black;
+    width: 30%;
+    text-align: center;
+    padding: 30px;
+    height: 400px;
+    border-radius: 20px;
+    margin: auto;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: aquamarine;
+
+}
+
+.in_box{
+    border: 2px solid black;
+    height: 20px;
+    width: 300px;
+    border-radius: 20px;
+    padding-bottom: 40px;
+    background-color: antiquewhite;
+    margin:0 auto;
+
+}
+
+.bottom_box{
+    box-sizing: border-box;
+    width: 380px;
+    height: 180px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: blueviolet;
+    margin:0 auto;
+    padding-left: 30px;
+    padding-top: 30px;
+}
