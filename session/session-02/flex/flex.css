@@ -1,0 +1,71 @@
+/* 창 바로 위쪽에 붙어서 시작하면 디자인 별로니까 margin으로 거리두고 시작 */
+body{
+    margin: 200px;
+    background-color: white;
+}
+/* 전체 구조파악; 전체 컨테이너 안에 층별로 컨테이너들이 (아이템처럼)세로정렬되어 있다. 그 컨테이너 안의 아이템들이 가로정렬되어 배치된 구조.  */
+/* 전체 컨테이너 */
+.Layout-container{
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    height: 600px;
+    background-color: black;
+    justify-content: space-evenly;
+}
+/* 첫번째 층 */
+.Layout-title{
+    display: flex;
+    justify-content: center;
+    /* 아이템의 기본 크기 설정 */
+    flex-basis: 17%;
+}
+
+.title{
+    background-color: brown;
+    width: 97%;
+    display: flex;
+    /* 아이템의 가로 가운데 정렬 */
+    justify-content: center;
+    /* 아이템의 세로 가운데 정렬 */
+    align-items: center;
+}
+/* 두번째 층 */
+.Layout-recent{
+    /* 디폴트값이 row(가로)이기 때문에 굳이 flex-direction: 설정해줄 필요없음. */
+    display: flex;
+    justify-content: space-evenly;
+    flex-basis: 23%;
+}
+
+.recent{
+    background-color: aqua;
+    width: 23%;
+    /* 아래 정렬 속성을 쓰기 위해 flex 사용 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* 세번째 층 */
+.Layout-popular{
+    display: flex;
+    justify-content: space-evenly;
+    flex-basis: 53%;
+
+}
+.popular{
+    background-color:chocolate;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 3번째 popular 섹션은 박스크기가 3대1이기 때문에 따로 불러서 */
+.popular1{
+    flex-basis: 72%;
+}
+
+.popular2{
+    flex-basis: 22%;
+}
