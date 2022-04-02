@@ -1,0 +1,154 @@
+body{
+    margin: 100px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+    height: 600px;
+    background-color: black;
+    box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.5);
+    justify-content: space-evenly;
+}
+/* 1층 */
+.Layout-first{
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-basis: 8%;
+}
+.first{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 80%;
+}
+.item1{
+    flex-basis: 24%;
+    background-color: aqua;
+}
+.item2{
+    flex-basis: 72%;
+    background-color: aquamarine;
+}
+/* 2층 */
+.Layout-second{
+    display: flex;
+    background-color: chocolate;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-basis: 10%;
+}
+.second{
+    display: flex;
+    flex-basis: 32%;
+    height: 80%;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: brown;
+}
+/* 3층 */
+.Layout-third{
+    background-color:darkolivegreen;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-basis: 25%;
+}
+.third{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 80%;
+}
+.three1{
+    flex-basis: 38%;
+    background-color: darkgreen;
+
+}
+.three2{
+    background-color: darkgreen;
+    flex-basis: 58%;
+}
+/* 4층 ; 둥글게 */
+.Layout-fourth{
+    display: flex;
+    background-color: palevioletred;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-basis: 25%;
+}
+.fourth{
+    display: flex;
+    height: 80%;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 30px;
+}
+.four1{
+    flex-basis: 58%;
+    background-color:deeppink;
+}
+.four2{
+    flex-basis: 38%;
+    background-color:deeppink;
+}
+
+/* 5층 ; 오른쪽부분은 컨테이너를 새로 만들어서 아이템 배치 */
+.Layout-fifth{
+    display: flex;
+    flex-basis: 30%;
+    background-color: rebeccapurple;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.five1{
+    display: flex;
+    background-color: darkviolet;
+    height: 80%;
+    flex-basis: 38%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.inner-layout{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 58%;
+    height: 80%;
+    justify-content: space-evenly;
+}
+.five2{
+    display: flex;
+    background-color: darkviolet;
+    height: 45%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.five3{
+    display: flex;
+    background-color: blue;
+    height: 45%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.five3-1{
+    display: flex;
+    height: 80%;
+    flex-basis: 48%;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: dodgerblue;
+}
+.five3-2{
+    display: flex;
+    height: 80%;
+    background-color: dodgerblue;
+    flex-basis: 48%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
