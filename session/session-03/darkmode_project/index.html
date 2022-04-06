@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+    <!-- 해, 달 이모티콘을 불러오기 위해 -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
+</head>
+<body>
+    <!-- input 태그는 사용자로부터 정보를 받아들이는 용도. ; checkbox, radio, button 등의 타입으로 사용자한테 여러 형태로 제공. -->
+    <!-- 참고로 radio버튼은 보기 중 한가지만 선택할 수 있다는 점에서 checkbox와 차이가 있음.  -->
+    <input type="checkbox" class="checkbox" id="checkbox">
+    <!-- <label> 요소는 for 속성을 사용하여 다른 요소와 결합할 수 있으며, 이때 <label> 요소의 for 속성값은 결합하고자 하는 요소의 id 속성값과 같아야 한다. ; 그래서 input태그의 id와 label태그의 for 값 같게.-->
+    <label for="checkbox" class="label">
+        <!-- 불러올 해, 달 이모티콘 이름. -->
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <!-- 모드변경할 때 버튼이미지  -->
+        <div class="ball"></div>
+    </label>
+    <p>모드 변경</p>
+</body>
+</html>
