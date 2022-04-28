@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="main.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
+</head>
+<body>
+    <nav class="navigationbar">
+        <div class="nav-content">
+            <div class="nav-title">
+                <a href="portfolio.html">
+                    <h2 class="sm">SM page </h2>
+                </a>
+            </div>
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-menu-item"><a href="portfolio.html">Home</a></li>
+                    <li class="nav-menu-item"><a href="https://github.com/LikeLion-at-CAU-10th">Likelion</a></li>
+                    <li class="nav-menu-item"><a href="buffet.html">Essay</a></li>
+                    <li class="nav-menu-item"><a href="books.html">Books</a></li>
+                    <li class="nav-menu-item"><a href="https://626a6c31c42c481e30936c3c--quiz-show.netlify.app/">PlayGame</a></li>
+
+                </ul>
+            </div>    
+        </div>
+    </nav>
+
+    <section class="profile">
+        <h1>이 상 민</h1>
+        <h4>#Dreamer <span class="space">&#9;</span> #Collector <span class="space">&#9;</span> #Learner <span class="space">&#9;</span> #Listener <span class="space">&#9;</span> #Creator</h4>
+    </section>
+
+    <section class="content-section">
+    <!--  z-index 써보기(z-index는 position 속성이 설정된 엘리먼트에 대해서만 의미를 갖는다.) ;copy가 image 위로 오도록 -->
+        <!-- 모듈형식. -->
+    <!-- 1번째 박스 -->
+        <div class="module-content">
+            <div class="unit-wrapper">
+                <a href="https://github.com/LikeLion-at-CAU-10th" class="unit-link" ></a>
+                <div class="unit-copy-wrapper">
+                    <h2 class="headline headline-likelion">멋쟁이 사자처럼, 대담하게.</h2>
+                    <div class="page-link">
+                        <a href="https://github.com/LikeLion-at-CAU-10th" class="page-link-text">더 알아보기</a>
+                    </div>
+                </div>
+                <div class="unit-image-wrapper">
+                    <!-- figure태그 요소의 콘텐츠는 문서의 내용과는 연관성을 가지지만, 해당 콘텐츠의 위치가 문서의 주요 흐름과는 독립적이어서 제거해도 문서의 흐름에 영향을 주어서는 안된다. -->
+                    <!-- <figure class="unit-image unit-image-likelion"></figure> -->
+                    <image class="unit-image unit-image-language" src="likelion-portfolio.png"></image>
+                </div>
+            </div>
+        </div>
+
+    <!-- 2번째 박스 -->
+        <div class="module-content">
+            <div class="unit-wrapper">
+                <a href="buffet.html" class="unit-link" ></a>
+                <div class="unit-copy-wrapper">
+                    <h3 class="subhead">나의 뮤즈</h3>
+                    <h2 class="headline">Warren Edward Buffett</h2>
+                    <div class="page-link">
+                        <a href="buffet.html" class="page-link-text">더 알아보기</a>
+                    </div>
+                </div>
+                <div class="unit-image-wrapper">
+                    <image class="unit-image unit-image-language" src="버핏.png"></image>
+                </div>
+            </div>
+        </div>
+    <!-- 3번째 박스 -->
+        <div class="module-content">
+            <div class="unit-wrapper">
+                <a href="books.html" class="unit-link" ></a>
+                <div class="unit-copy-wrapper">
+                    <h2 class="headline">애정하는 책들</h2>
+                    <h3 class="subhead">역사. 경영. 투자.</h3>
+                    <div class="page-link">
+                        <a href="books.html" class="page-link-text">더 알아보기</a>
+                    </div>
+                </div>
+                <div class="unit-image-wrapper">
+                    <image class="unit-image unit-image-language" src="library.png"></image>
+                </div>
+            </div>
+        </div>
+    <!-- 4번째 박스 -->
+        <div class="module-content">
+            <div class="unit-wrapper">
+                <a href="https://626a6c31c42c481e30936c3c--quiz-show.netlify.app/" class="unit-link" ></a>
+                <div class="unit-copy-wrapper copy-language">
+                    <h3 class="subhead">지금까지 경험한</h3>
+                    <h3 class="sub-headline">프로그래밍 언어</h3>
+                    <h2 class="headline headline-language">창조를 위한 노력.</h2>
+                    <div class="page-link">
+                        <a href="https://626a6c31c42c481e30936c3c--quiz-show.netlify.app/" class="page-link-text">결과물 보러가기</a>
+                    </div>
+                </div>
+                <div class="unit-image-wrapper">
+                    <image class="unit-image unit-image-language" src="language.png"></image>
+                </div>
+            </div>
+        </div>
+    </section>  
+
+    <footer>
+        <section class="footer-mini">
+            <p class="copyright">Copyright ©  2022 | 이상민 | min-18</p>
+            <p>| 중앙대학교 멋쟁이 사자처럼 | <a href="mailto:doleme00@likelion.org" class="footer-mail">doleme00@likelion.org</a></p>
+        </section>
+    </footer>
+
+    <!-- 다크모드 파트 -->
+    <div class="checkbox-part">
+        <input type="checkbox" class="checkbox" id="checkbox">
+        <label for="checkbox" class="label">
+            <!-- 불러올 해, 달 이모티콘 이름. -->
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <!-- 모드변경할 때 버튼이미지  -->
+            <div class="ball"></div>
+        </label>
+    </div>
+    <script defer src="darkmode.js"></script>
+</body>
+</html>
