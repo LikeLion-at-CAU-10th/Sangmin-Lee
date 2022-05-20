@@ -5,14 +5,16 @@ manage.py가 있는 폴더에서 django-admin startapp footprint 명령어를 �
 
 ![스크린샷 2022-05-19 오후 10 09 20](https://user-images.githubusercontent.com/101850881/169530309-1694f58c-662c-487b-ad12-b2542fd8ef05.png)
 
-
+<br>
 django project 설정파일인 settings.py로 가서 INSTALLED_APPS에 footprint 넣어주기.
 
 ![스크린샷 2022-05-19 오후 10 43 55](https://user-images.githubusercontent.com/101850881/169530398-96a89cd3-d3da-424b-a1e5-e905251beec9.png)
 
 
 django 기본 url인 http://127.0.0.1:8000/ 뒤에 뭐가 붙는지에 따라 어디로 가는지 길안내하는 역할.
+
 예를 들어 뒤에 footprint/ 가 붙어서 http://127.0.0.1:8000/footprint/ 이면 footprint 폴더의 urls.py로 넘어가고
+
 http://127.0.0.1:8000/footprint/ ; views.py에 있는 footprint_GET 함수실행
 http://127.0.0.1:8000/footprint/send ; views.py에 있는 footprint_POST 함수실행
 
