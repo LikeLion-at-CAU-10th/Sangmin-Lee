@@ -13,5 +13,6 @@ class Account(models.Model):
     mbti = models.TextField(null=False)
     # 전공
     major = models.TextField(null=False)
-    # 메세지가 언제 보내는지 파악하기 위해 
-    sent_at = models.DateTimeField(auto_now_add=True, blank=False)
+    # 언제 사용자 정보가 추가되었는지 
+    # auto_now_add=True ; 해당 레코드 생성시 현재 시간 자동저장
+    created_at = models.DateTimeField(auto_now_add=True, blank=False)
