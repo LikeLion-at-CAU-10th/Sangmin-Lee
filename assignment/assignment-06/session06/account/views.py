@@ -41,8 +41,16 @@ def account_POST(request):
     # 중복 처리하기 위해 Create 하는 부분에서 filter를 통해 먼저 닉네임을 가진 사용자가 존재하는지 조회, 없다면 유저 생성하는 흐름으로 가야함.
 
     # 사용자 닉네임이 존재하지않으면 create 가능.
-    if Account.objects.filter(nickname='이상민') == False:
+    # 주의점. Queryset 형태로 반환한다. 그래서 그냥 == False: 로 가면 안된다. 
+    if len(Account.objects.filter(nickname='이상민')) == 0:
         Account.objects.create(nickname=body['name'])
+    
+    # 중복된 경우
+    else:
+        return JsonResponse({
+            'status': 400,
+            'message': '이미 존재하는 닉네임입니다.'
+        })
 
     return JsonResponse({
         'status': 200,
