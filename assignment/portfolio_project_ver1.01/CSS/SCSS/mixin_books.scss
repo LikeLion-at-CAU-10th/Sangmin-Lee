@@ -1,0 +1,44 @@
+// 변수묶음 불러오기.
+@import "./variables.scss";
+
+// mixin과 include 는 마치 함수를 선언하고 실행하는 것과 같다.
+@mixin respond-font($media) {
+  @if $media == mobile {
+    // mobile
+    @media only screen and (max-width: 768px) {
+      html {
+        font-size: 8px;
+      }
+      .navigationbar {
+        padding-top: 10px;
+      }
+    }
+  } @else if $media == tablet {
+    // tablet
+    @media only screen and (min-width: 768px) and (max-width: 1100px) {
+      html {
+        font-size: 12px;
+      }
+    }
+  } @else if $media == pc {
+    // pc
+    @media only screen and (min-width: 1100px) {
+      html {
+        font-size: 16px;
+      }
+    }
+  }
+}
+// scss의 강점 ;중복해서 쓰는 것을 피할 수 있다.
+.title-text {
+  h2 {
+    font-size: 1.2rem;
+  }
+  p {
+    font-size: 0.7rem;
+  }
+}
+
+@include respond-font(mobile);
+@include respond-font(tablet);
+@include respond-font(pc);
