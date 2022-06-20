@@ -1,0 +1,20 @@
+.name {
+  font-size: 30px;
+  color: coral;
+  border: 3px solid red;
+  width: 30%;
+  text-align: center;
+}
+
+@mixin fontStyle($fontColor) {
+  color: $fontColor;
+  border-bottom: 1px solid darkcyan;
+}
+
+.detail1 {
+  @include fontStyle(aquamarine);
+}
+
+.detail2 {
+  @include fontStyle(blue);
+}

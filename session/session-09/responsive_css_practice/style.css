@@ -1,0 +1,90 @@
+:root {
+  --text-color: #fof4f5;
+  --background-color: #263344;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(18, 162, 162);
+  align-items: center;
+  padding: 8px 16px;
+}
+
+.navbar_logo {
+  display: flex;
+  color: white;
+}
+.navbar_logo i {
+  color: coral;
+  padding-right: 10px;
+}
+.navbar_menu {
+  display: flex;
+  list-style: none;
+}
+
+.navbar_menu li {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.navbar_menu li:hover {
+  background-color: coral;
+  border-radius: 4px;
+}
+
+.navbar_icons {
+  color: white;
+  display: flex;
+}
+
+.navbar_icons i {
+  padding: 8px 8px;
+}
+
+.navbar_toggleBtn {
+  color: white;
+  display: none;
+  position: absolute;
+  right: 2vw;
+}
+/* 미디어 쿼리 */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar_menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .navbar_menu li {
+    width: 100%;
+    text-align: center;
+  }
+  .navbar_icons {
+    display: none;
+    width: 100%;
+    justify-content: center;
+  }
+  .navbar_toggleBtn {
+    display: block;
+  }
+  .navbar_men.active,
+  .navbar_icons.active {
+    display: flex;
+  }
+}
+
+/* 흐름에서 나와 배치하고 싶을 때 position : absolute */
