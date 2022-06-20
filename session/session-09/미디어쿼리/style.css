@@ -1,0 +1,46 @@
+/* 모바일 ; min 으로 */
+/* .title {
+  font-size: 30px;
+}
+
+@media (min-width: 640px) {
+  .title {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 35px;
+  }
+} */
+
+/* 노트북 ver*/
+
+.title {
+  font-size: 30px;
+}
+
+@media (max-width: 1024px) {
+  .title {
+    font-size: 45px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 640px) {
+  .title {
+    font-size: 25px;
+  }
+}
