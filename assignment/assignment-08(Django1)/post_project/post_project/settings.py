@@ -13,7 +13,7 @@ import json
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # 보안파일
-secret_file = os.path.join(BASE_DIR, 'secrets.json')
+secret_file = os.path.join(BASE_DIR, 'secrets_copy.json')
 
 with open(secret_file) as f:
     secrets = json.loads(f.read())
