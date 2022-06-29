@@ -13,9 +13,9 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from unicodedata import name
+# from unicodedata import name
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from posts import views
 
 urlpatterns = [
@@ -23,5 +23,7 @@ urlpatterns = [
     path('index/',views.index, name='index'),
     path('', views.http_response, name="home"),
     path('json_respose/', views.json_respose, name="json_respose"),
+    # include 로 todomates app에서 관련 url 관리 ; 주의) url에 todomates/ 빼먹지 않도록!
+    path('todomates/', include('todomates.urls')),
     
 ]
