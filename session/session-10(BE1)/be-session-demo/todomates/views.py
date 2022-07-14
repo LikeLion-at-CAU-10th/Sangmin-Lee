@@ -105,4 +105,45 @@ def get_category(requests, id):
             'data': None
         })
 
+# category_id 는 urls.py에서 받아온 매개변수
+def create_todo(request, category_id):
+    if request.method == 'POST':
 
+    # 이미지는 다르게 받는데
+        body = request.POST
+        # 이해 필요
+        img = request.FILES['thumb_nail']
+    
+        new_todo = Todo.objects.create(
+            # 주의. 모델생성시에는 따옴표써주고 Create 해줄때는 따옴표없이 모델을 불러옴.
+            category = get_object_or_404(Category, pk=category_id),
+            content = body['content'],
+            thumb_nail = img
+        )
+    
+        new_todo_json = {
+                'id' : new_todo.id,
+                'content' : new_todo.content,
+                'thumb_nail' : '/media/' + str(new_todo.thumb_nail),
+                'is_completed' : new_todo.is_completed,
+                'pub_date' :new_todo.pub_date,
+    
+            }
+    
+        return JsonResponse({
+            'status': 200,  #성공
+            'success' : True,
+            'message': '생성 성공',
+            'data': new_todo_json
+
+        })
+
+    else:
+        return JsonResponse({
+            'status': 405,  #실패
+            'success' : False,
+            'message': '생성 실패',
+            'data': None
+        })   
+
+    # 이미지도 gitignore에 포함. 장고에서 알아서해주느 ㄴ것 같음.
