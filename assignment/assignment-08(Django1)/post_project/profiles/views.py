@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 import json
 from django.http import JsonResponse
-from .models import Profile
+from .models import Profile, Room
 
 # profile Create api
 def create_profile(requests):
@@ -84,6 +84,7 @@ def get_profiles_all(requests):
 
 
 # 특정 id값을 갖는 profile만 Read 하는 api
+# url에 적힌 
 def get_profile(requests, id):
     
     if requests.method == "GET":
@@ -121,6 +122,9 @@ def update_profile(requests, id):
         # 특정 pk값에 해당하는 객체 가져오기.
         update_profile = get_object_or_404(Profile, pk=id)
         
+        # save()메서드로 저장해줘야함.
+        update_profile.save()
+
         # 그 객체의 각각의 값 Update
         update_profile.name = body['name']
         update_profile.age = body['age']
@@ -171,3 +175,75 @@ def delete_profile(requests, id):
                 'data': None
             })
 
+# 모임생성하는 함수
+def create_room(request, host_id):
+    if request.method == "POST":
+
+        # 객체 생성
+        new_room = Room.objects.create(
+            # 모임생성한 host_id에 해당하는 특정 호스트정보가 담김.  
+            host = get_object_or_404(Profile, pk=host_id),
+            title = request.POST['title'],
+            place = request.POST['place'],
+            certification_photo = request.FILES['certification_photo'],
+
+        )
+
+        # json으로 보낼 거니까 json 형태로 바꿔주기.
+        new_room_json = {
+            'host': new_room.host.name,
+            'title': new_room.title,
+            'place': new_room.place,
+            'certification_photo': '/media/' + str(new_room.certification_photo),
+
+        }
+        return JsonResponse({
+            'status': 200,  #성공
+            'success' : True,
+            'message': '생성 성공',
+            'data': new_room_json
+
+        })
+
+    else:
+        return JsonResponse({
+            'status': 405,  #실패
+            'success' : False,
+            'message': '생성 실패',
+            'data': None
+        })
+
+def get_rooms(request, host_id):
+    if request.method == "GET":
+
+        # 특정 host_id 의 호스트가 만든 모임 객체들 필터링해서 가져옴. 
+        # filter => (필드명) + (더블언더라인__) + (참조당하는 모델의 필드) = ""
+        room_set = Room.objects.filter(host__pk = host_id)
+
+        room_set_json_all = []
+
+        for room in room_set:
+            room_set_json = {
+                'host': room.host.name,
+                'title': room.title,
+                'place': room.place,
+                'certification_photo': '/media/' + str(room.certification_photo),
+            }
+            room_set_json_all.append(room_set_json)
+
+        return JsonResponse({
+            'status': 200,  #성공
+            'success' : True,
+            'message': '조회 성공',
+            'data': room_set_json_all
+
+        })
+
+    else:
+        return JsonResponse({
+            'status': 405,  #실패
+            'success' : False,
+            'message': '조회 실패',
+            'data': None
+        })
+        
