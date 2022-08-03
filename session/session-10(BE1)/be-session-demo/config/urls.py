@@ -16,6 +16,10 @@ urlpatterns = [
     path('json_respose/', views.json_respose, name="json_respose"),
     # include 로 todomates app에서 관련 url 관리 ; 주의) url에 todomates/ 빼먹지 않도록!
     path('todomates/', include('todomates.urls')),
+    path('posts/', include('posts.urls')),
+
+    path('likelion/', include('likelion.urls')),
+
     
 ]
 

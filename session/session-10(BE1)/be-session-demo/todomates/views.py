@@ -3,6 +3,15 @@ from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404
 from .models import *
 
+# 팁3. 디버그 툴바 -> 문서 구글링 해보기
+# 팁2 시리얼라이저
+from django.core.serializers import serialize
+
+# 팁1. 
+from django.views.decorators.http import require_http_methods
+
+# post 요청 아니면 자동으로 튕겨내는 장고 내장된 기능 ; else일 때 응답 자동으로 처리
+@require_http_methods(['POST', 'GET'])
 def create_category(requests):
 
     if requests.method == "POST":
@@ -109,18 +118,20 @@ def get_category(requests, id):
 def create_todo(request, category_id):
     if request.method == 'POST':
 
-    # 이미지는 다르게 받는데
         body = request.POST
-        # 이해 필요
+
+        # 이미지는 다르게 받는다.; files
         img = request.FILES['thumb_nail']
     
+        # Todo 모델로 객체 CREATE 
         new_todo = Todo.objects.create(
             # 주의. 모델생성시에는 따옴표써주고 Create 해줄때는 따옴표없이 모델을 불러옴.
             category = get_object_or_404(Category, pk=category_id),
             content = body['content'],
             thumb_nail = img
         )
-    
+
+        # json 형태로 예쁘게 전달
         new_todo_json = {
                 'id' : new_todo.id,
                 'content' : new_todo.content,
